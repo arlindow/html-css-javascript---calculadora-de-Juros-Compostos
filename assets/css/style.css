@@ -1,0 +1,318 @@
+/* 
+ * Importação da fonte Poppins
+ * 
+ * Esta linha de código utiliza a regra @import para carregar a fonte Poppins 
+ * do Google Fonts. As variantes wght@100;200;300;400;500 estão sendo importadas.
+ * A propriedade 'display=swap' é usada para garantir um carregamento mais eficiente 
+ * e evitar atrasos na renderização da página devido ao carregamento da fonte.
+ * 
+ * Fonte Poppins: https://fonts.google.com/specimen/Poppins
+ */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+/*---------------------------------------------------------------------------------------------------*/
+
+
+/* 
+ * Definição de variável global :root
+ * 
+ * O seletor :root é usado para definir variáveis globais no CSS. Neste caso,
+ * está sendo definida a variável --linear-gradient para armazenar um gradiente linear.
+ * O gradiente é composto por três cores: #38bdf8, #6d28d9 e #4c1d95.
+ * O gradiente é aplicado na direção de 90 graus (horizontal).
+ * 
+ * Esta variável pode ser usada em várias partes do código, proporcionando 
+ * uma maneira consistente de aplicar o mesmo gradiente em diferentes elementos.
+ * 
+ * Gradiente Linear:
+ * - Cor 1: #38bdf8
+ * - Cor 2: #6d28d9
+ * - Cor 3: #4c1d95
+ */
+:root{
+    --linear-gradient: linear-gradient(90deg,#38bdf8, #6d28d9, #4c1d95);
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+
+/* 
+ * Estilo Global para Todos os Elementos (*)
+ * 
+ * Esta regra CSS aplica estilos globais a todos os elementos (*) na página.
+ * Isso é útil para garantir uma consistência na apresentação e layout.
+ * 
+ * Propriedades:
+ * - font-family: Define a fonte principal como 'Poppins', com fallback para fontes sans-serif caso 'Poppins' não esteja disponível.
+ * - margin: Define margem zero em todos os lados, eliminando espaçamento padrão entre elementos.
+ * - padding: Define padding zero em todos os lados, removendo qualquer preenchimento padrão dos elementos.
+ * - box-sizing: Define a caixa de modelagem como 'border-box', o que significa que o padding e a borda são incluídos nas dimensões totais do elemento.
+ * 
+ * Essas configurações ajudam a criar uma base consistente para o design e layout da página.
+ */
+*{
+    font-family: 'poppins', sans-serif;  
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+
+/* 
+ * Estilo do Contêiner (#container)
+ * 
+ * Este bloco de estilo é aplicado ao elemento com o ID 'container'.
+ * Ele define propriedades para o layout, aparência e cores do contêiner.
+ * 
+ * Propriedades:
+ * - width: Define a largura do contêiner como 100% da largura disponível.
+ * - height: Define a altura do contêiner como 100% da altura da viewport (100vh).
+ * - display: Utiliza o modelo de layout flexível (flex).
+ * - align-items: Centraliza os itens ao longo do eixo transversal (verticalmente).
+ * - justify-content: Centraliza os itens ao longo do eixo principal (horizontalmente).
+ * - background: Aplica o gradiente linear definido pela variável --linear-gradient como plano de fundo.
+ * - color: Define a cor do texto dentro do contêiner como #d1d5db (um tom de cinza).
+ * 
+ * Essas configurações são comuns para criar um contêiner centralizado, responsivo
+ * e com um esquema de cores específico.
+ */
+#container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--linear-gradient);
+    color: #d1d5db;
+}
+/*-------------------------------------------------------------------------------------------------*/
+
+
+/* 
+ * Estilo da Calculadora (#calculator)
+ * 
+ * Este bloco de estilo é aplicado ao elemento com o ID 'calculator'.
+ * Ele define propriedades para o layout, aparência e sombra da calculadora.
+ * 
+ * Propriedades:
+ * - background-color: Define a cor de fundo da calculadora como #262626 (um tom de cinza escuro).
+ * - padding: Adiciona preenchimento interno de 40px para afastar o conteúdo das bordas da calculadora.
+ * - border-radius: Adiciona uma borda arredondada à calculadora com raio de 28px.
+ * - box-shadow: Aplica uma sombra à calculadora com deslocamento de 10px na horizontal e vertical,
+ *                e um desfoque de 10px. A cor da sombra é um rgba(0,0,0,0.323), proporcionando um efeito suave.
+ * - display: Utiliza o modelo de layout flexível (flex).
+ * - flex-direction: Define a direção do fluxo dos elementos como coluna, empilhando-os verticalmente.
+ * - gap: Adiciona um espaçamento de 25px entre os elementos filhos da calculadora.
+ * 
+ * Essas configurações são comuns para estilizar uma calculadora, dando a ela uma aparência
+ * moderna com cores escuras, bordas arredondadas, sombra suave e um layout flexível.
+ */
+#calculator{
+    background-color: #262626;
+    padding: 40px;
+    border-radius: 28px;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.323);
+    display: flex;
+    flex-direction: column; 
+    gap: 25px;
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+
+/* 
+ * Estilo do Título H2 dentro da Calculadora (#calculator h2)
+ * 
+ * Este bloco de estilo é aplicado aos elementos h2 que estão dentro da calculadora (#calculator).
+ * Ele define propriedades específicas para o tamanho da fonte e a posição do título.
+ * 
+ * Propriedades:
+ * - font-size: Define o tamanho da fonte do título h2 como 30px.
+ * - position: Define a posição do título como relativa ao seu contêiner pai.
+ * 
+ * Essas configurações são específicas para estilizar o título h2 dentro da calculadora,
+ * proporcionando um tamanho de fonte maior e permitindo posicionamento relativo.
+ */
+#calculator h2{
+    font-size: 30px;
+    position: relative;
+
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+/* 
+ * Estilo do Pseudo-elemento ::before no Título H2 da Calculadora (#calculator h2::before)
+ * 
+ * Este bloco de estilo é aplicado ao pseudo-elemento ::before do título h2 dentro da calculadora (#calculator h2).
+ * Ele define propriedades específicas para criar um elemento visual antes do título.
+ * 
+ * Propriedades:
+ * - position: Define a posição do pseudo-elemento como absoluta, posicionando-o em relação ao contêiner pai.
+ * - content: Adiciona um conteúdo vazio ao pseudo-elemento para torná-lo renderizável.
+ * - height: Define a altura do pseudo-elemento como 3px.
+ * - width: Define a largura do pseudo-elemento como 150px.
+ * - background: Aplica o gradiente linear definido pela variável --linear-gradient como plano de fundo do pseudo-elemento.
+ * - bottom: Posiciona o pseudo-elemento 5px acima da parte inferior do título h2.
+ * 
+ * Essas configurações são projetadas para adicionar uma linha decorativa antes do título h2,
+ * criando um efeito visual interessante.
+ */
+#calculator h2::before{
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 150px;
+    background: var(--linear-gradient);
+    bottom: 5px;
+}
+/*-------------------------------------------------------------------------------------------------*/
+
+/* 
+ * Estilo do Contêiner de Entrada (#input-box)
+ * 
+ * Este bloco de estilo é aplicado ao elemento com o ID 'input-box'.
+ * Ele define propriedades para o layout e espaçamento entre elementos dentro do contêiner.
+ * 
+ * Propriedades:
+ * - display: Define o modelo de layout como flexível, permitindo o uso do modelo flexbox para organizar os elementos filhos.
+ * - flex-direction: Define a direção principal dos elementos filhos como coluna. Isso significa que os elementos filhos serão empilhados verticalmente.
+ * - gap: Adiciona um espaçamento vertical entre os elementos filhos de 25 pixels. O espaçamento é aplicado apenas entre os elementos, não nas extremidades.
+ * 
+ * Essas configurações são projetadas para criar um contêiner de entrada flexível e responsivo, onde os elementos filhos são organizados verticalmente,
+ * proporcionando um espaçamento consistente entre eles.
+ */
+#input-box{
+    display: flex; 
+    flex-direction: column; 
+    gap:25px 
+}
+/*-------------------------------------------------------------------------------------------------*/
+
+/* 
+ * Estilo do Campo de Entrada (.input-field)
+ * 
+ * Este bloco de estilo é aplicado aos elementos com a classe 'input-field'.
+ * Ele define propriedades para o layout e largura do campo de entrada.
+ * 
+ * Propriedades:
+ * - display: Utiliza o modelo de layout flexível (flex).
+ * - flex-direction: Define a direção do fluxo dos elementos como coluna, empilhando-os verticalmente.
+ * - width: Define a largura do campo de entrada como 100% da largura disponível.
+ * 
+ * Essas configurações são comuns para criar um campo de entrada flexível e responsivo,
+ * com os elementos empilhados verticalmente.
+ */
+.input-field{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+/*--------------------------------------------------------------------------------------------------*/
+
+/* 
+ * Estilo do Rótulo dentro do Campo de Entrada (.input-field label)
+ * 
+ * Este bloco de estilo é aplicado aos elementos de rótulo dentro de elementos com a classe 'input-field'.
+ * Ele define propriedades para o estilo do texto do rótulo.
+ * 
+ * Propriedades:
+ * - font-size: Define o tamanho da fonte do rótulo como 15 pixels.
+ * - color: Define a cor do texto do rótulo como #c8ced6 (um tom de cinza azulado).
+ * - font-weight: Define o peso da fonte do rótulo como 500 (fonte de peso médio).
+ * 
+ * Essas configurações são comuns para estilizar rótulos dentro de campos de entrada, proporcionando uma aparência coesa e legível.
+ */
+.input-field label{
+    font-size: 15px;
+    color: #c8ced6;
+    font-weight: 500;
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+/* 
+ * Estilo do Campo de Entrada (.input-field input)
+ * 
+ * Este bloco de estilo é aplicado aos elementos de entrada dentro de elementos com a classe 'input-field'.
+ * Ele define propriedades para o estilo visual e de texto do campo de entrada.
+ * 
+ * Propriedades:
+ * - background-color: Define a cor de fundo do campo de entrada como transparente, permitindo que o plano de fundo do elemento pai seja visível.
+ * - border: Remove a borda padrão do campo de entrada.
+ * - border-bottom: Adiciona uma borda na parte inferior do campo de entrada com 1 pixel de largura e cor #4c1d95 (um tom de roxo).
+ * - color: Define a cor do texto do campo de entrada como #fff (branco).
+ * - font-size: Define o tamanho da fonte do campo de entrada como 20 pixels.
+ * - padding: Adiciona um preenchimento interno de 5 pixels ao redor do conteúdo do campo de entrada.
+ * 
+ * Essas configurações são comuns para criar um campo de entrada estilizado, com texto branco, borda na parte inferior e um tamanho de fonte maior.
+ */
+.input-field input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #4c1d95;
+    color: #fff;
+    font-size: 20px;
+    padding: 5px;
+}
+/*----------------------------------------------------------------------------------------------------*/
+
+/* 
+ * Estilo do Campo de Entrada Quando em Foco (.input-field input:focus)
+ * 
+ * Este bloco de estilo é aplicado aos elementos de entrada dentro de elementos com a classe 'input-field' quando estão em foco.
+ * Ele define propriedades para remover a borda de foco padrão ao clicar no campo de entrada.
+ * 
+ * Propriedades:
+ * - outline: Remove a borda de foco padrão que geralmente é exibida ao clicar no campo de entrada.
+ * 
+ * Essa configuração é útil para personalizar a aparência do campo de entrada durante o estado de foco, removendo a borda padrão que pode interferir no design personalizado.
+ */
+.input-field input:focus{
+    outline: none;
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+#result{
+    text-align: center;
+}
+/*----------------------------------------------------------------------------------------------------*/
+
+#total{
+    font-size: 40px;
+}
+/*---------------------------------------------------------------------------------------------------*/
+
+/* 
+ * Estilo do Botão com ID 'calculate' (#calculate)
+ * 
+ * Este bloco de estilo é aplicado ao elemento de botão com o ID 'calculate'.
+ * Ele define propriedades para a aparência e interatividade do botão.
+ * 
+ * Propriedades:
+ * - background: Aplica o gradiente linear definido pela variável --linear-gradient como plano de fundo do botão.
+ * - border: Remove a borda padrão do botão.
+ * - padding: Adiciona preenchimento interno de 10 pixels ao redor do conteúdo do botão.
+ * - color: Define a cor do texto do botão como #fff (branco).
+ * - font-weight: Define o peso da fonte do texto do botão como negrito.
+ * - font-size: Define o tamanho da fonte do texto do botão como 18 pixels.
+ * - border-radius: Adiciona uma borda arredondada ao botão com raio de 24 pixels.
+ * - cursor: Define o cursor do mouse como 'pointer', indicando que o botão é interativo.
+ * 
+ * Essas configurações são projetadas para criar um botão estilizado e visualmente atraente.
+ */
+#calculate{
+    background: var(--linear-gradient);
+    border: none;
+    padding: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 24px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
